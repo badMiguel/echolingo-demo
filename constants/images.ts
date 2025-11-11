@@ -5,8 +5,8 @@ type imageType = {
 };
 
 const images: imageType = {
-    "Feelings and Behaviours": require("@/assets/images/placeholder.jpg"),
-    "Greetings and Checking In": require("@/assets/images/placeholder.jpg"),
+    "Feelings and Behaviours": require("@/assets/images/Youre_Not_Alone.jpg"),
+    "Greetings and Checking In": require("@/assets/images/map-of-australia-painting-in-the-aboriginal-style-vector-1035812.jpg"),
 };
 
 export default images;
