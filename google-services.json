@@ -1,29 +1,29 @@
 {
-    "project_info": {
-        "project_number": "89256999282",
-        "project_id": "echolingo-4aa6d",
-        "storage_bucket": "echolingo-4aa6d.appspot.com"
-    },
-    "client": [
-        {
-            "client_info": {
-                "mobilesdk_app_id": "1:89256999282:android:c2b9e225c75e4a612345eb",
-                "android_client_info": {
-                    "package_name": "com.hit238.echolingo"
-                }
-            },
-            "oauth_client": [],
-            "api_key": [
-                {
-                    "current_key": "AIzaSyDoWuDkE2J8gbUAoHvhyjb1U9jkYIMS6lk"
-                }
-            ],
-            "services": {
-                "appinvite_service": {
-                    "other_platform_oauth_client": []
-                }
-            }
+  "project_info": {
+    "project_number": "289889835149",
+    "project_id": "echolingo-demo",
+    "storage_bucket": "echolingo-demo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289889835149:android:38e379b5cda38c71272ac4",
+        "android_client_info": {
+          "package_name": "com.hit238.echolingo"
         }
-    ],
-    "configuration_version": "1"
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs4oDhTnltcuDVNdKjjM4ZfMZHBujt4uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
 }

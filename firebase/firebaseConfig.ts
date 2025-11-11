@@ -9,13 +9,12 @@ import { getStorage } from "firebase/storage";
 
 // Initialize Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyDoWuDkE2J8gbUAoHvhyjb1U9jkYIMS6lk",
-    authDomain: "echolingo-4aa6d.firebaseapp.com",
-    projectId: "echolingo-4aa6d",
-    storageBucket: "echolingo-4aa6d.appspot.com",
-    messagingSenderId: "89256999282",
-    appId: "1:89256999282:android:c2b9e225c75e4a612345eb",
-    measurementId: "G-NH58WWKJCD",
+    apiKey: "AIzaSyAs4oDhTnltcuDVNdKjjM4ZfMZHBujt4uw",
+    authDomain: "echolingo-demo.firebaseapp.com",
+    projectId: "echolingo-demo",
+    storageBucket: "echolingo-demo.firebasestorage.app",
+    messagingSenderId: "289889835149",
+    appId: "1:289889835149:android:38e379b5cda38c71272ac4",
 };
 
 const app = initializeApp(firebaseConfig);
