@@ -1,12 +1,12 @@
 import { Pressable, SectionList, StyleSheet, View, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
-import { DataType, emptyTiwiData, useTiwiListContext } from "@/contexts/TiwiContext";
+import { DataType, Submission, emptyTiwiData, useTiwiListContext } from "@/contexts/TiwiContext";
 import { router } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { useThemeColor } from "@/hooks/useThemeColor";
 import SearchBar from "@/components/search/search";
 import { Switch } from "react-native-paper";
-import { useSubmissions } from "@/contexts/SubmissionsContext";
+// import { useSubmissions } from "@/contexts/SubmissionsContext";
 import { useCallback } from "react";
 
 const useColor = () => {
@@ -46,7 +46,8 @@ export default function RecordingList() {
 
     const [isRefreshing, setIsRefreshing] = useState(false);
 
-    const { submissions, isLoading, refreshSubmissions } = useSubmissions();
+    const submissions: any = [];
+    const isLoading = false;
 
     const data = useTiwiListContext();
     const color = useColor();
@@ -59,24 +60,22 @@ export default function RecordingList() {
         return str.replace(/[^a-z0-9]/gi, "_").toLowerCase();
     };
 
-    const getSubmissionCount = useCallback(
-        (sentenceEnglish: string | undefined) => {
-            if (!sentenceEnglish) {
-                console.error("getSubmissionCount: sentenceEnglish is undefined");
-                return 0;
-            }
-            const normalizedSentence = normalizeString(sentenceEnglish);
-            const count = submissions.filter((sub) => {
-                const normalizedSubmission = normalizeString(sub.sentenceEnglish);
-                return (
-                    normalizedSubmission.includes(normalizedSentence)
-                );
-            }).length;
-            // console.log(`getSubmissionCount for "${sentenceEnglish}":`, count);
-            return count;
-        },
-        [submissions]
-    );
+    // const getSubmissionCount = useCallback(
+    //     (sentenceEnglish: string | undefined) => {
+    //         if (!sentenceEnglish) {
+    //             console.error("getSubmissionCount: sentenceEnglish is undefined");
+    //             return 0;
+    //         }
+    //         const normalizedSentence = normalizeString(sentenceEnglish);
+    //         const count = submissions.filter((sub) => {
+    //             const normalizedSubmission = normalizeString(sub.sentenceEnglish);
+    //             return normalizedSubmission.includes(normalizedSentence);
+    //         }).length;
+    //         // console.log(`getSubmissionCount for "${sentenceEnglish}":`, count);
+    //         return count;
+    //     },
+    //     [submissions]
+    // );
 
     const handleSearchResults = (searchList: string[] | Map<string, string[]>) => {
         setSearchResults(searchList);
@@ -84,7 +83,7 @@ export default function RecordingList() {
 
     const handleRefresh = async () => {
         setIsRefreshing(true);
-        await refreshSubmissions();
+        // await refreshSubmissions();
         setIsRefreshing(false);
     };
 
@@ -137,8 +136,8 @@ export default function RecordingList() {
                     ? dataRecorded
                     : [{ "0": emptyTiwiData() }]
                 : dataNotRecorded.length > 0
-                  ? dataNotRecorded
-                  : [{ "0": emptyTiwiData() }],
+                    ? dataNotRecorded
+                    : [{ "0": emptyTiwiData() }],
         },
     ];
 
@@ -171,14 +170,14 @@ export default function RecordingList() {
                         );
                     }
 
-                    const submissionCount = getSubmissionCount(sentenceData.English);
+                    // const submissionCount = getSubmissionCount(sentenceData.English);
                     // console.log(`Submission count for "${sentenceData.English}":`, submissionCount);
 
                     return (
                         <SentenceCard
                             sentence={item}
                             finished={false}
-                            submissionCount={submissionCount}
+                            submissionCount={0}
                         />
                     );
                 }}
